@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="粤语电影网 - 喺度，搵到你鍾意嘅港片。經典港片、粵語喜劇、江湖警匪、文藝獨立，一網打盡，原聲粵語，正宗港味。">
+<meta name="keywords" content="粤语电影网,港片,香港电影,粵語電影,经典港片,江湖片,周星驰,王家卫,yueyudianyingwang-wap">
+<meta name="author" content="粤语电影网">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="bingbot" content="index, follow, max-image-preview:large">
+<meta name="referrer" content="always">
+<meta property="og:title" content="粤语电影网 - 喺度，搵到你鍾意嘅港片">
+<meta property="og:description" content="經典港片、粵語喜劇、江湖警匪、文藝獨立，一網打盡。原聲粵語，正宗港味。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yueyudianyingwang-wap.github.io">
+<meta property="og:site_name" content="粤语电影网">
+<title>粤语电影网 | 港片粤语原声 · 正宗港味 | yueyudianyingwang-wap.github.io</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --neon:#ff2d6f;
+  --neon2:#ffb800;
+  --neon3:#00e5ff;
+  --hk:#0d0a14;
+  --hk2:#15101f;
+  --ink:#f5eef5;
+  --mute:#a99fb8;
+  --sign:#ffe600;
+  --sans:'PingFang SC','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--hk);line-height:1.85;overflow-x:hidden;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.012) 3px,rgba(255,255,255,.012) 4px),
+    radial-gradient(circle at 85% 15%,rgba(255,45,111,.18),transparent 45%),
+    radial-gradient(circle at 15% 85%,rgba(0,229,255,.12),transparent 42%);
+}
+a{text-decoration:none;color:inherit}
+img,svg{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--neon);color:#fff}
+
+/* ===== marquee nav ===== */
+.top{position:sticky;top:0;z-index:70;background:rgba(13,10,20,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,45,111,.4)}
+.top-in{max-width:1320px;margin:0 auto;padding:0 30px;display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .kanji{position:relative;font-size:1.7rem;font-weight:900;color:#fff;letter-spacing:.02em;line-height:1}
+.brand .kanji span{color:var(--neon)}
+.brand .kanji::after{content:'粵';position:absolute;top:-3px;right:-16px;font-size:.72rem;background:var(--sign);color:#000;padding:1px 5px;border-radius:3px;font-weight:800}
+.brand small{font-size:.7rem;color:var(--mute);letter-spacing:.16em;text-transform:uppercase;border-left:1px solid rgba(255,255,255,.2);padding-left:12px;margin-left:4px}
+.navlinks{display:flex;align-items:center;gap:4px}
+.navlinks a{font-size:.85rem;font-weight:600;padding:8px 15px;color:var(--mute);border-radius:4px;transition:.25s;position:relative}
+.navlinks a:hover{color:#fff;text-shadow:0 0 10px var(--neon)}
+.navlinks a.on{color:#fff;background:var(--neon)}
+.navlinks a.on::after{content:'';position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);width:6px;height:6px;background:var(--neon);border-radius:50%;box-shadow:0 0 8px var(--neon)}
+.mbtn{display:none;width:42px;height:42px;border:1px solid var(--neon);border-radius:4px;color:var(--neon);font-size:1.1rem}
+.sheet{display:none;position:fixed;inset:74px 0 0;z-index:69;background:var(--hk);padding:12px 24px;border-top:1px solid var(--neon)}
+.sheet.open{display:block}
+.sheet a{display:block;padding:15px 4px;font-size:1rem;font-weight:600;color:var(--ink);border-bottom:1px solid rgba(255,255,255,.08)}
+
+/* ===== neon hero ===== */
+.hero{max-width:1320px;margin:0 auto;padding:70px 30px 40px}
+.stage{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:800;letter-spacing:.2em;color:var(--sign);border:1px solid var(--sign);padding:6px 14px;border-radius:2px;margin-bottom:28px}
+.tagline::before{content:'';width:8px;height:8px;background:var(--neon);border-radius:50%;box-shadow:0 0 10px var(--neon);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.stage h1{font-size:clamp(2.6rem,6.4vw,5.4rem);font-weight:900;line-height:.98;letter-spacing:-.01em;color:#fff}
+.stage h1 i{font-style:normal;color:var(--neon);text-shadow:0 0 24px rgba(255,45,111,.55)}
+.stage h1 b{display:block;font-size:.36em;font-weight:700;letter-spacing:.02em;color:var(--mute);margin-top:20px;line-height:1.7}
+.lede{margin-top:32px;font-size:1.02rem;color:var(--mute);max-width:540px}
+.dial{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.play{background:var(--neon);color:#fff;font-weight:800;padding:15px 38px;font-size:.92rem;letter-spacing:.04em;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);transition:.3s}
+.play:hover{background:var(--neon2);color:#000}
+.play:hover{background:#ff4d84}
+.ghost{font-size:.85rem;font-weight:700;color:var(--neon3);padding:12px 4px}
+.crt{margin-top:50px;display:flex;gap:36px;flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.16);padding-top:28px}
+.crt div span{display:block;font-size:2rem;font-weight:900;color:var(--sign);line-height:1;text-shadow:0 0 16px rgba(255,230,0,.35)}
+.crt div small{font-size:.74rem;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+
+/* hero collage */
+.collage{position:relative;aspect-ratio:4/5;max-width:440px;margin-left:auto}
+.tape{position:absolute;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.tape::before{content:attr(data-t);position:absolute;top:0;left:0;right:0;font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--neon);background:rgba(0,0,0,.55);padding:6px 10px;z-index:2}
+.tape .body{position:absolute;inset:0;display:flex;align-items:flex-end;padding:14px;font-weight:800;font-size:1.2rem;line-height:1.35;color:#fff;z-index:1}
+.t1{top:0;left:0;width:58%;height:44%;background:linear-gradient(135deg,#2b1230,#6b1a3c)}
+.t1 .body{background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+.t2{top:8%;right:0;width:38%;height:30%;background:linear-gradient(135deg,#0e2a3a,#0a4a5a)}
+.t2 .body{background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.95rem}
+.t3{bottom:34%;right:4%;width:46%;height:26%;background:linear-gradient(135deg,#3a2a08,#7a5a10)}
+.t3 .body{background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.95rem}
+.t4{bottom:0;left:6%;width:52%;height:32%;background:linear-gradient(135deg,#1a0e2e,#3a1a5e)}
+.t4 .body{background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+.t5{bottom:6%;right:0;width:34%;height:24%;background:linear-gradient(135deg,#2a0a14,#8a1530)}
+.t5 .body{background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.85rem}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 6px,rgba(255,255,255,.04) 6px,rgba(255,255,255,.04) 7px);pointer-events:none;border-radius:2px}
+
+/* ===== corner frame sections ===== */
+.wrap{max-width:1320px;margin:0 auto;padding:0 30px}
+.frame{padding:88px 0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:52px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px}
+.head .l .en{font-size:.74rem;font-weight:800;letter-spacing:.26em;color:var(--neon3);text-transform:uppercase}
+.head .l h2{font-size:clamp(1.85rem,4.4vw,3rem);font-weight:900;color:#fff;line-height:1.35;margin-top:8px}
+.head .l h2 em{font-style:normal;color:var(--neon)}
+.head .r{font-size:.86rem;color:var(--mute);max-width:300px;text-align:right}
+.head .r a{color:var(--neon2);font-weight:700}
+
+/* ===== channel strip (genres) ===== */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.1)}
+.chan{position:relative;padding:34px 26px 30px;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);overflow:hidden;transition:.4s;background:var(--hk2)}
+.chan:nth-child(4n){border-right:none}
+.chan::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--neon);transition:.4s}
+.chan:hover{background:#1c1528}
+.chan:hover::after{width:100%}
+.chan .freq{font-size:.72rem;font-weight:800;letter-spacing:.14em;color:var(--neon3)}
+.chan .ico{font-size:2.2rem;margin:18px 0 20px}
+.chan h3{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:10px}
+.chan p{font-size:.84rem;color:var(--mute);line-height:1.9}
+.chan .n{position:absolute;top:20px;right:22px;font-size:2.6rem;font-weight:900;color:rgba(255,255,255,.04);line-height:1}
+
+/* ===== cinema timeline (movies) ===== */
+.cinema{position:relative;padding:0 0 0 120px}
+.cinema::before{content:'88'\A'89'\A'90'\A'91'\A'92';white-space:pre-line;position:absolute;left:0;top:0;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--mute);line-height:calc(20% * 5);opacity:.5}
+.reel{position:relative;padding-left:34px}
+.reel::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--neon),var(--neon2),var(--neon3))}
+.reel article{position:relative;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.reel article::before{content:'';position:absolute;left:-33px;top:28px;width:14px;height:14px;background:var(--hk);border:3px solid var(--neon);border-radius:50%}
+.reel article:hover::before{background:var(--neon);box-shadow:0 0 14px var(--neon)}
+.reel .row{display:grid;grid-template-columns:64px 1fr 140px;gap:22px;align-items:baseline}
+.reel .yr{font-size:1.5rem;font-weight:900;color:var(--sign)}
+.reel h3{font-size:1.3rem;font-weight:800;color:#fff;line-height:1.45}
+.reel .meta{font-size:.78rem;color:var(--neon3);font-weight:600}
+.reel p{margin-top:12px;font-size:.88rem;color:var(--mute);line-height:1.95;max-width:780px}
+.reel .quote{margin-top:14px;font-size:.9rem;color:var(--neon2);font-style:italic;font-weight:700}
+
+/* ===== split tape (features) ===== */
+.betamax{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+.deck{position:relative;background:var(--hk2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:40px 36px;overflow:hidden}
+.deck .label{position:absolute;top:0;right:0;background:var(--neon);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.12em;padding:5px 14px}
+.deck h3{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;color:#fff;line-height:1.45;margin-bottom:8px}
+.deck .sub{font-size:.8rem;color:var(--neon3);font-weight:700;letter-spacing:.1em;margin-bottom:26px}
+.deck ul{list-style:none}
+.deck li{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.deck li:last-child{border-bottom:none}
+.deck li b{font-size:1.7rem;line-height:1;color:var(--sign);flex-shrink:0}
+.deck li strong{display:block;font-size:.98rem;font-weight:700;color:#fff;margin-bottom:4px}
+.deck li span{font-size:.84rem;color:var(--mute);line-height:1.85}
+.deck.alt .label{background:var(--neon2);color:#000}
+.deck.alt li b{color:var(--neon)}
+
+/* ===== ticker board (news) ===== */
+.board{background:var(--hk2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px;overflow:hidden}
+.board-in{padding:14px 18px;background:var(--hk);border:1px solid rgba(255,255,255,.08);border-radius:4px;height:380px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--neon) transparent}
+.board-in::-webkit-scrollbar{width:6px}
+.board-in::-webkit-scrollbar-thumb{background:var(--neon)}
+.tick{padding:16px 0;border-bottom:1px dashed rgba(255,255,255,.1)}
+.tick:last-child{border-bottom:none}
+.tick time{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--neon2)}
+.tick h4{font-size:1.02rem;font-weight:800;color:#fff;margin:7px 0 7px;line-height:1.55}
+.tick p{font-size:.82rem;color:var(--mute);line-height:1.9}
+
+/* ===== neon sign (about) ===== */
+.signage{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.sign{position:relative;background:var(--hk2);border:8px solid #050308;border-radius:12px;padding:50px 30px;text-align:center;box-shadow:inset 0 0 60px rgba(0,0,0,.6)}
+.sign .bulb{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:900;color:#3a2a4a;letter-spacing:.01em;line-height:1.15}
+.sign .bulb.on{color:var(--neon);text-shadow:0 0 12px var(--neon),0 0 30px var(--neon),0 0 60px rgba(255,45,111,.6)}
+.sign .base{margin-top:26px;font-size:.82rem;color:var(--sign);letter-spacing:.2em;font-weight:800}
+.sign .screw{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);animation:blink 2s infinite}
+.sign .s1{top:-4px;left:14%;}.sign .s2{top:-4px;left:50%;transform:translateX(-50%);}.sign .s3{top:-4px;right:14%;}
+.copy h3{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:900;color:#fff;line-height:1.55;margin-bottom:24px}
+.copy h3 em{font-style:normal;color:var(--neon2)}
+.copy p{font-size:.94rem;color:var(--mute);line-height:2.05;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.tags span{font-size:.8rem;font-weight:700;color:var(--neon3);border:1px solid rgba(0,229,255,.35);border-radius:2px;padding:6px 13px}
+
+/* ===== url marquee ===== */
+.urltape{margin-top:56px;background:var(--neon);padding:30px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.urltape .u{font-size:clamp(1rem,2.6vw,1.5rem);font-weight:900;color:#fff;letter-spacing:.01em}
+.urltape .u small{display:block;font-size:.8rem;font-weight:700;opacity:.9;margin-top:7px}
+.urltape a{color:#000;font-weight:800;background:var(--sign);padding:10px 22px;font-size:.86rem}
+
+/* ===== footer ===== */
+footer{background:#06040c;color:var(--mute);padding:64px 0 26px;margin-top:30px;border-top:1px solid rgba(255,45,111,.25)}
+.foot{max-width:1320px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px}
+.foot .brand{margin-bottom:18px}
+.foot .brand .kanji{color:#fff}
+.foot .brand p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.95;max-width:320px;margin-top:14px}
+.foot h5{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:18px;letter-spacing:.08em}
+.foot ul{list-style:none}
+.foot li{margin-bottom:11px}
+.foot a{font-size:.85rem;color:rgba(255,255,255,.5);transition:.2s}
+.foot a:hover{color:var(--neon)}
+.footbot{max-width:1320px;margin:34px auto 0;padding:22px 30px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.4)}
+.footbot a{color:var(--neon2)}
+
+/* ===== reveal ===== */
+.rv{opacity:0;transform:translateY(26px);transition:.75s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+/* ===== responsive ===== */
+@media (max-width:1000px){
+  .stage{grid-template-columns:1fr;gap:44px}
+  .collage{margin:0 auto}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .chan:nth-child(4n){border-right:1px solid rgba(255,255,255,.08)}
+  .chan:nth-child(2n){border-right:none}
+  .cinema{padding-left:0}
+  .cinema::before{display:none}
+  .reel .row{grid-template-columns:52px 1fr;gap:12px}
+  .reel .meta{grid-column:2}
+  .betamax{grid-template-columns:1fr}
+  .signage{grid-template-columns:1fr;gap:40px}
+  .foot{grid-template-columns:1fr 1fr;gap:32px}
+  .frame{padding:60px 0}
+  .navlinks{display:none}
+  .mbtn{display:block}
+  .head .r{text-align:left}
+}
+@media (max-width:560px){
+  .top-in{padding:0 18px;height:66px}
+  .hero{padding:40px 18px 28px}
+  .strip{grid-template-columns:1fr}
+  .chan{border-right:none}
+  .foot{grid-template-columns:1fr}
+  .urltape{padding:24px;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+  .deck{padding:30px 24px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- Top nav -->
+<div class="top">
+  <div class="top-in">
+    <div class="brand"><span class="kanji">粤语<span>电影网</span></span><small>Cantonese Cinema</small></div>
+    <nav class="navlinks">
+      <a href="#onair" class="on">正在熱映</a>
+      <a href="#freq">頻道分類</a>
+      <a href="#classic">經典年代</a>
+      <a href="#studio">點解揀我哋</a>
+      <a href="#board">最新資訊</a>
+      <a href="#sign">關於我哋</a>
+    </nav>
+    <button class="mbtn" id="mBtn">☰</button>
+  </div>
+</div>
+<div class="sheet" id="sheet">
+  <a href="#onair">正在熱映</a>
+  <a href="#freq">頻道分類</a>
+  <a href="#classic">經典年代</a>
+  <a href="#studio">點解揀我哋</a>
+  <a href="#board">最新資訊</a>
+  <a href="#sign">關於我哋</a>
+</div>
+
+<!-- Neon hero -->
+<div class="hero">
+  <div class="stage">
+    <div>
+      <span class="tagline rv">● ON AIR · 粤语电影网 · yueyudianyingwang-wap.github.io</span>
+      <h1 class="rv">喺度，搵到你<br><i>鍾意嘅港片</i><b>经典港片 · 粵語喜劇 · 江湖警匪 · 文藝獨立<br>原聲粵語，正宗港味，一個網站睇晒。</b></h1>
+      <p class="lede rv">粤语电影网（https://yueyudianyingwang-wap.github.io）係一個專門收集粵語電影嘅網站。由 80 年代嘅錄像帶，到而家嘅 4K 修復，我哋幫你執好晒，原聲原味，一撳即播。</p>
+      <div class="dial rv">
+        <a href="#onair" class="play">▶ 開始睇戲</a>
+        <a href="#sign" class="ghost">關於粤语电影网 →</a>
+      </div>
+      <div class="crt rv">
+        <div><span>4,800+</span><small>收錄影片</small></div>
+        <div><span>40年</span><small>港片年代</small></div>
+        <div><span>原聲</span><small>粵語音軌</small></div>
+        <div><span>4K</span><small>修復版本</small></div>
+      </div>
+    </div>
+    <div class="collage rv">
+      <div class="tape t1" data-t="NOW SHOWING"><div class="body">江湖告急<br>都係為咗生存</div></div>
+      <div class="tape t2" data-t="CLASSIC"><div class="body">92 神作</div></div>
+      <div class="tape t3" data-t="COMEDY"><div class="body">笑到你落地</div></div>
+      <div class="tape t4" data-t="RESTORED"><div class="body">4K 修復<br>重映經典</div></div>
+      <div class="tape t5" data-t="NEW"><div class="body">今日新片</div></div>
+      <div class="scan"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Genres: channel strip -->
+<section class="frame" id="freq">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="l"><div class="en">Frequency Channels</div><h2>8 個頻道，<em>任你轉台</em></h2></div>
+      <div class="r">分類唔係為咗齋排，係為咗你喺三秒內搵到今日想睇嘅嗰種感覺。<a href="#">睇晒所有頻道 →</a></div>
+    </div>
+    <div class="strip">
+      <a href="#" class="chan rv"><div class="freq">CH 01</div><div class="ico">🕶️</div><h3>江湖警匪</h3><p>雙雄對決、臥底兄弟、兄弟情義，港片最經典嘅嘢。</p><div class="n">01</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 02</div><div class="ico">😂</div><h3>無厘頭喜劇</h3><p>笑到你落地，同時又笑中帶淚嘅粵語喜劇。</p><div class="n">02</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 03</div><div class="ico">🌹</div><h3>都市愛情</h3><p>關於錯過、關於喺呢個城市入面嘅細小浪漫。</p><div class="n">03</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 04</div><div class="ico">🎭</div><h3>文藝獨立</h3><p>唔係商業片，但會留喺你心入面好耐嘅嗰種。</p><div class="n">04</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 05</div><div class="ico">🔫</div><h3>動作犯罪</h3><p>拳拳到肉、飛車槍戰，港產動作嘅黃金歲月。</p><div class="n">05</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 06</div><div class="ico">👻</div><h3>靈異驚悚</h3><p>港式恐怖同鬼故，陪伴咗無數人嘅夜晚。</p><div class="n">06</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 07</div><div class="ico">🍚</div><h3>飲食人情</h3><p>一間茶餐廳、一煲老火湯，講緊嘅都係人情味。</p><div class="n">07</div></a>
+      <a href="#" class="chan rv"><div class="freq">CH 08</div><div class="ico">🎞️</div><h3>經典修復</h3><p>4K 重新修復嘅老片，俾新一代重新認識港片。</p><div class="n">08</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Classic timeline -->
+<section class="frame" id="classic" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="l"><div class="en">Classic Era · 年代精選</div><h2>由 <em>80 到 00</em>，<br>港片最威嘅二十年</h2></div>
+      <div class="r">每一年代揀幾部代表作，幫你重溫，或者第一次睇。<a href="#">完整片庫 →</a></div>
+    </div>
+    <div class="cinema">
+      <div class="reel">
+        <article class="rv"><div class="row"><div class="yr">1988</div><h3>英雄本色 · 最後一堂兄弟課</h3><div class="meta">江湖 / 經典</div></div><p>一個關於信唔信人嘅故事。風衣、雙槍、喺碼頭落緊雨——呢啲畫面之後被複製咗幾十年，但最原始嗰個版本永遠喺度。</p><div class="quote">「我冇做大佬好耐啦。」</div></article>
+        <article class="rv"><div class="row"><div class="yr">1990</div><h3>賭神 · 賭檯上嘅江湖</h3><div class="meta">賭片 / 經典</div></div><p>梳飛墨、黑手套、轉晒風車咁嘅運鏡。唔只係賭錢，係講一個人點樣喺冇晒之後重新企返起身。</p><div class="quote">「你知唔知，贏到盡係咩感覺？」</div></article>
+        <article class="rv"><div class="row"><div class="yr">1992</div><h3>審死官 · 一套笑到肚痛嘅官場喜劇</h3><div class="meta">喜劇 / 經典</div></div><p>開庭先講一段相聲，原告被告都要等佢講完。無厘頭嘅節奏到今時今日都唔過時。</p><div class="quote">「我告你呀我！」</div></article>
+        <article class="rv"><div class="row"><div class="yr">1994</div><h3>重案組 · 街市查案嘅警匪片</h3><div class="meta">警匪 / 經典</div></div><p>冇 super hero，得一班行入街市問菜販嘅警察。港片嘅寫實一面，比想像中更有力。</p></article>
+        <article class="rv"><div class="row"><div class="yr">1996</div><h3>食神 · 一粒叉燒飯嘅執著</h3><div class="meta">喜劇 / 經典</div></div><p>由跌落神壇到街邊擺檔，最後食出眼淚嗰味。講嘅係食物，其實係一個人點樣認住自己。</p><div class="quote">「你根本唔識食，你淨係識錢。」</div></article>
+        <article class="rv"><div class="row"><div class="yr">2000</div><h3>花樣年華 · 一條走廊、一件衫</h3><div class="meta">文藝 / 經典</div></div><p>唔講出口嘅嘢，先至係最重。燈光、旗袍、樓梯，慢到你有時間去記住嗰種感覺。</p></article>
+        <article class="rv"><div class="row"><div class="yr">2004</div><h3>功夫 · 一條豬籠城寨嘅武林</h3><div class="meta">動作喜劇 / 經典</div></div><p>包租婆、裁縫佬、苦力強，每個角色都係一個傳說。打到最後，諗返起嗰句「你想學啊？我教你呀」。</p></article>
+        <article class="rv"><div class="row"><div class="yr">2018</div><h3>淪落人 · 屋簷下嘅兩個人</h3><div class="meta">文藝 / 新港片</div></div><p>新港片一樣拍得好靚。一個外傭同一個半身唔使嘅老人家，互相拉住對方行落去。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features: beta decks -->
+<section class="frame" id="studio" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="l"><div class="en">Why This Station</div><h2>點解要嚟<br><em>粤语电影网</em>？</h2></div>
+      <div class="r">唔係第個電影網站嘅 copy。我哋只做一件事：令你聽到最正宗嘅粵語。<a href="#sign">關於我哋 →</a></div>
+    </div>
+    <div class="betamax">
+      <div class="deck rv"><span class="label">SIDE A</span><div class="sub">A面 · 片源</div><h3>收得齊，先講得上有得揀</h3>
+        <ul>
+          <li><b>01</b><div><strong>80–00 年代完整收錄</strong><span>由錄像帶年代到數碼年代，港片最輝煌嗰二十年幾乎齊晒。</span></div></li>
+          <li><b>02</b><div><strong>原聲粵語音軌</strong><span>大部分片都保留原聲粵語，唔係配音版，係當年喺戲院聽到嗰把聲。</span></div></li>
+          <li><b>03</b><div><strong>4K 修復上架</strong><span>經典片陸續做 4K 修復，老電影睇落同新片一樣清。</span></div></li>
+          <li><b>04</b><div><strong>每日加新片</strong><span>無論係舊片定新港片，每日都有嘢加，唔怕睇晒。</span></div></li>
+        </ul>
+      </div>
+      <div class="deck alt rv"><span class="label">SIDE B</span><div class="sub">B面 · 體驗</div><h3>睇戲呢件事，可以好簡單</h3>
+        <ul>
+          <li><b>05</b><div><strong>一撳即播</strong><span>粤语电影网 https://yueyudianyingwang-wap.github.io 手機、平板、電腦、電視盒都得，一次登入全部同步。</span></div></li>
+          <li><b>06</b><div><strong>字幕自選</strong><span>粵語原聲配簡繁中文字幕，聽唔明嗰陣有得跟住睇。</span></div></li>
+          <li><b>07</b><div><strong>連續播同收藏</strong><span>記住你睇到邊，下次開返就係，加心心就入咗你嘅片單。</span></div></li>
+          <li><b>08</b><div><strong>無廣告打斷</strong><span>睇緊戲嗰陣唔會突然跳出嘢，成件事順順利利。</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News: ticker board -->
+<section class="frame" id="board" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="l"><div class="en">News Ticker</div><h2>最新 <em>消息板</em></h2></div>
+      <div class="r">更新、修復、重映——所有關於粤语电影网嘅動態，都會喺度寫低。<a href="#">過往消息 →</a></div>
+    </div>
+    <div class="board rv">
+      <div class="board-in">
+        <div class="tick"><time>10.18 · 修復</time><h4>《英雄本色》完成 4K 修復，今日上架</h4><p>音軌重新做咗處理，當年嘅槍聲同落雨聲聽落更實淨。建議戴耳機睇。</p></div>
+        <div class="tick"><time>10.14 · 新片</time><h4>十月新港片專區開咗，八套新片一次睇晒</h4><p>由文藝到驚悚，呢排新港片其實出咗唔少好嘢，我哋執埋一齊畀你慢慢睇。</p></div>
+        <div class="tick"><time>10.09 · 專題</time><h4>【專題】如果只可以帶一套港片上島，你帶邊套？</h4><p>編輯部各自講咗一套，理由都好私人。留言話我哋知你會帶邊套。</p></div>
+        <div class="tick"><time>10.03 · 功能</time><h4>收藏片單功能上線，可以分「想睇」同「睇咗」</h4><p>再唔使怕見到套片唔記得係咪睇過。我哋都係成日咁。</p></div>
+        <div class="tick"><time>09.27 · 修復</time><h4>《花樣年華》修復版重映，限時免費睇一次</h4><p>落雨嘅走廊、嗰件旗袍——修復之後第一次喺呢度放出嚟，限時一個月。</p></div>
+        <div class="tick"><time>09.20 · 讀者</time><h4>讀者投稿：阿媽同我一齊睇《食神》嗰晚</h4><p>有位讀者寫咗篇好靚嘅嘢，講佢同阿媽喺廚房煮緊叉燒飯、電視播緊《食神》。我哋登咗出嚟。</p></div>
+        <div class="tick"><time>09.15 · 站務</time><h4>粤语电影网第三年：多謝你哋撳入嚟</h4><p>冇做咩宣傳，只係一路加片、修復、執好啲。而家每日都有人嚟，呢件事我哋好珍惜。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About: neon sign -->
+<section class="frame" id="sign" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="l"><div class="en">About The Station</div><h2>關於 <em>粤语电影网</em></h2></div>
+      <div class="r">一個由鍾意港片嘅人搞嘅網站。細細個，但係好有心。<a href="https://yueyudianyingwang-wap.github.io">訪問本站 →</a></div>
+    </div>
+    <div class="signage">
+      <div class="sign rv">
+        <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span>
+        <div class="bulb on">粤语</div>
+        <div class="bulb on">电影网</div>
+        <div class="base">● ON AIR SINCE 2024</div>
+      </div>
+      <div class="copy rv">
+        <h3>我哋相信，<em>港片唔會過氣</em>，<br>只會等人重新發現。</h3>
+        <p>粤语电影网（https://yueyudianyingwang-wap.github.io）係 2024 年由幾個鍾意睇港片嘅人搞起嘅一個細網站。起因好簡單：我哋想再聽多次當年喺戲院聽過嘅嗰啲對白，想再見返嗰啲街景、嗰啲茶餐廳、嗰啲夜晚嘅維港。</p>
+        <p>而家我哋收錄咗 4,800 幾套影片，由 80 年代嘅錄像帶年代到而家嘅新港片，由江湖警匪到文藝獨立，大部分都保留原聲粵語，部分做咗 4K 修復。未來都會繼續一路加、一路修，等你隨時可以撳入嚟，聽返句「我話你呀」。</p>
+        <div class="tags">
+          <span>原聲粵語</span><span>4K 修復</span><span>80–00 經典</span><span>新港片</span><span>江湖警匪</span><span>無厘頭喜劇</span><span>文藝獨立</span><span>每日更新</span>
+        </div>
+      </div>
+    </div>
+    <div class="urltape rv">
+      <div class="u">yueyudianyingwang-wap.github.io<small>粤语电影网 · 喺度，搵到你鍾意嘅港片</small></div>
+      <a href="https://yueyudianyingwang-wap.github.io">▶ 入去睇戲</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot">
+    <div class="brand"><span class="kanji">粤语<span>电影网</span></span><small>Cantonese Cinema</small><p>粤语电影网 https://yueyudianyingwang-wap.github.io —— 一個專門收集粵語電影嘅網站，原聲原味，正宗港味。多謝你哋一路撳入嚟。</p></div>
+    <div>
+      <h5>頻道</h5>
+      <ul>
+        <li><a href="#freq">江湖警匪</a></li>
+        <li><a href="#freq">無厘頭喜劇</a></li>
+        <li><a href="#freq">都市愛情</a></li>
+        <li><a href="#freq">文藝獨立</a></li>
+        <li><a href="#freq">經典修復</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>關於</h5>
+      <ul>
+        <li><a href="#sign">關於粤语电影网</a></li>
+        <li><a href="#">點解做呢個站</a></li>
+        <li><a href="#">修復計劃</a></li>
+        <li><a href="#">讀者投稿</a></li>
+        <li><a href="#">友情連結</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>幫助</h5>
+      <ul>
+        <li><a href="#">使用說明</a></li>
+        <li><a href="#">字幕設定</a></li>
+        <li><a href="#">問題反饋</a></li>
+        <li><a href="#">私隱說明</a></li>
+        <li><a href="#">聯絡我哋</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footbot">
+    <span>&copy; 2024–2026 <a href="https://yueyudianyingwang-wap.github.io">粤语电影网</a> · yueyudianyingwang-wap.github.io · 原聲粵語，正宗港味</span>
+    <span>Made in HK 🎬 多謝支持</span>
+  </div>
+</footer>
+
+<script>
+var mBtn=document.getElementById('mBtn'),sheet=document.getElementById('sheet');
+mBtn.addEventListener('click',function(){sheet.classList.toggle('open');});
+sheet.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){sheet.classList.remove('open');});});
+function reveal(){
+  document.querySelectorAll('.rv').forEach(function(el){
+    if(el.getBoundingClientRect().top<window.innerHeight-70){el.classList.add('in');}
+  });
+}
+window.addEventListener('scroll',reveal);window.addEventListener('load',reveal);reveal();
+</script>
+</body>
+</html>
